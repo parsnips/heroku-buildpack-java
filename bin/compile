@@ -59,6 +59,7 @@ echo -n "-----> Installing Maven 3.0.4..."
 curl --silent --max-time 180 --location $MAVEN_URL | tar xz
 chmod +x .maven/bin/mvn
 echo " done"
+echo `mvn --version`
 #fi
 
 MAVEN_SETTINGS_URL="http://s3.amazonaws.com/heroku-jvm-langpack-java/settings.xml"
