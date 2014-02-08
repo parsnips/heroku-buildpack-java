@@ -36,7 +36,7 @@ fi
 #create the cache dir if it doesn't exist
 rm -rf $CACHE_DIR
 mkdir -p $CACHE_DIR
-
+echo "cachedir :  $CACHE_DIR"
 # create default system.properties 
 if [ ! -f ${BUILD_DIR}/system.properties ]; then
   echo "java.runtime.version=1.6" > ${BUILD_DIR}/system.properties
@@ -57,7 +57,8 @@ MAVEN_URL="http://mirrors.ibiblio.org/maven2/org/apache/maven/apache-maven/3.0.4
 
 #if [ ! -d .maven ]; then
 echo -n "-----> Installing Maven 3.0.4..."
-curl --silent --max-time 180 --location $MAVEN_URL | tar xz
+curl --location $MAVEN_URL | tar xz
+echo `ls`
 chmod +x .maven/bin/mvn
 echo " done"
 echo `.maven/bin/mvn --version`
