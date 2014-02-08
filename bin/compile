@@ -58,7 +58,9 @@ MAVEN_URL="http://mirrors.ibiblio.org/maven2/org/apache/maven/apache-maven/3.0.4
 #if [ ! -d .maven ]; then
 echo -n "-----> Installing Maven 3.0.4..."
 curl --location $MAVEN_URL | tar xz
+echo `ls` 
 mv apache-maven-3.0.4/bin bin
+echo `ls -R`
 rm -rf apache-maven-3.0.4
 chmod +x .maven/bin/mvn
 echo " done"
