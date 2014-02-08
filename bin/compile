@@ -34,9 +34,8 @@ if [ "true" == $KEEP_M2_CACHE ]; then
 fi
 
 #create the cache dir if it doesn't exist
-rm -rf $CACHE_DIR
 mkdir -p $CACHE_DIR
-echo "cachedir :  $CACHE_DIR"
+
 # create default system.properties 
 if [ ! -f ${BUILD_DIR}/system.properties ]; then
   echo "java.runtime.version=1.6" > ${BUILD_DIR}/system.properties
@@ -66,9 +65,9 @@ mkdir -p $CACHE_DIR/.m2
 MAVEN_SETTINGS_URL="http://s3.amazonaws.com/heroku-jvm-langpack-java/settings.xml"
 
 echo -n "-----> Installing settings.xml..."
-#if [ -f .m2/settings.xml ]; then
-#  rm .m2/settings.xml 
-#fi
+if [ -f .m2/settings.xml ]; then
+  rm .m2/settings.xml 
+fi
 curl --silent --max-time 10 --location $MAVEN_SETTINGS_URL --output .m2/settings.xml
 echo " done"
 
