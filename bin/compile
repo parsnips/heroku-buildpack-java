@@ -63,7 +63,7 @@ cp apache-maven-3.0.4/bin/* $CACHE_DIR/bin/.
 echo `ls $CACHE_DIR`
 echo `ls $CACHE_DIR/bin`
 rm -rf apache-maven-3.0.4
-chmod +x .maven/bin/mvn
+chmod +x /bin/mvn
 echo " done"
 echo `.maven/bin/mvn --version`
 echo `$CACHE_DIR/.maven/bin/mvn --version`
